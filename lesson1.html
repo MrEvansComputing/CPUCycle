@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boot Sequence</title><link rel="stylesheet" href="styles.css"></head><body>
+<div class="topbar">
+  <div class="brand"><div class="chip">CPU</div> CPU MISSION HQ</div>
+  <div class="navlinks">
+    <a href="index.html">HQ</a><a href="lesson1.html">Boot Sequence</a><a href="lesson2.html">Control Room</a><a href="lesson3.html">Fetch Protocol</a><a href="arena.html">Challenge Arena</a>
+  </div>
+  <div class="stats"><div class="pill"><strong data-xp>0</strong> XP</div><div class="pill"><strong data-done>0</strong> missions</div></div>
+</div><main class="wrap">
+<div class="kicker">Lesson 1 extension</div><h1>Boot Sequence</h1>
+<p class="small">Theme: secondary storage → RAM → CPU. Start simple; difficulty increases quickly.</p>
+
+<section class="mission">
+<h2>Mission 1 — Quick diagnostic</h2>
+<div class="question"><strong>A game is installed on an SSD. Where should the instructions be while the game is running?</strong>
+<div class="options">
+<button class="option" data-value="ssd" onclick="mcq(this,'ram','l1q1',20,'Running programs need their instructions and data in RAM so the CPU can access them quickly.')">Still on the SSD only</button>
+<button class="option" data-value="ram" onclick="mcq(this,'ram','l1q1',20,'Running programs need their instructions and data in RAM so the CPU can access them quickly.')">RAM</button>
+<button class="option" data-value="alu" onclick="mcq(this,'ram','l1q1',20,'Running programs need their instructions and data in RAM so the CPU can access them quickly.')">Inside the ALU</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="mission">
+<h2>Mission 2 — Rebuild the launch sequence</h2>
+<p>Move the cards into the most sensible order.</p>
+<div class="sort-zone">
+<div class="row"><div class="token" data-key="cpu">CPU fetches an instruction</div><button class="iconbtn" onclick="moveItem(this,-1)">↑</button><button class="iconbtn" onclick="moveItem(this,1)">↓</button></div>
+<div class="row"><div class="token" data-key="storage">Program is stored on SSD/HDD</div><button class="iconbtn" onclick="moveItem(this,-1)">↑</button><button class="iconbtn" onclick="moveItem(this,1)">↓</button></div>
+<div class="row"><div class="token" data-key="ram">Required instructions/data are loaded into RAM</div><button class="iconbtn" onclick="moveItem(this,-1)">↑</button><button class="iconbtn" onclick="moveItem(this,1)">↓</button></div>
+<div class="row"><div class="token" data-key="output">The instruction contributes to an output/result</div><button class="iconbtn" onclick="moveItem(this,-1)">↑</button><button class="iconbtn" onclick="moveItem(this,1)">↓</button></div>
+</div>
+<button class="btn" onclick="checkOrder(this,['storage','ram','cpu','output'],'l1order',40)">Check sequence</button><div class="feedback"></div>
+</section>
+
+<section class="mission">
+<h2>Mission 3 — Upgrade adviser</h2>
+<div class="question"><strong>A student says: “My PC takes ages to open a large game from a hard disk. I should buy a faster CPU because that is where the game is stored.” What is the best response?</strong>
+<div class="options">
+<button class="option" data-value="a" onclick="mcq(this,'c','l1q2',35,'Storage affects how quickly the program can be read and loaded; the program is not permanently stored in the CPU.')">Correct — programs are permanently stored inside the CPU.</button>
+<button class="option" data-value="b" onclick="mcq(this,'c','l1q2',35,'Storage affects how quickly the program can be read and loaded; the program is not permanently stored in the CPU.')">Correct — CPU clock speed controls SSD/HDD capacity.</button>
+<button class="option" data-value="c" onclick="mcq(this,'c','l1q2',35,'Storage affects how quickly the program can be read and loaded; the program is not permanently stored in the CPU.')">Not quite — a faster SSD may reduce loading time because the program must be read from secondary storage into RAM.</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="mission">
+<h2>Mission 4 — Myth buster</h2>
+<div class="question"><strong>Which statement is false?</strong>
+<div class="options">
+<button class="option" data-value="ramvolatile" onclick="mcq(this,'cpu-storage','l1q3',35,'The CPU processes instructions; it is not used as long-term secondary storage.')">RAM is volatile.</button>
+<button class="option" data-value="ssdnonvolatile" onclick="mcq(this,'cpu-storage','l1q3',35,'The CPU processes instructions; it is not used as long-term secondary storage.')">An SSD is non-volatile.</button>
+<button class="option" data-value="cpu-storage" onclick="mcq(this,'cpu-storage','l1q3',35,'The CPU processes instructions; it is not used as long-term secondary storage.')">The CPU is where programs are stored long-term.</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="mission">
+<h2>Mission 5 — One-sentence boss</h2>
+<p>Complete the sentence in your own words:</p>
+<div class="question"><strong>Before the CPU can execute a program stored on an SSD, the program must...</strong>
+<div class="inputline"><input type="text" placeholder="Type your explanation"><button class="btn good" onclick="shortCheck(this,['ram','main memory'],'l1short',50,'Your answer should mention RAM / main memory.')">Submit</button></div>
+<div class="feedback"></div></div>
+<div class="callout">Stretch: explain why replacing an HDD with an SSD may improve loading time but does not automatically make every calculation faster.</div>
+</section>
+</main>
+<div class="footer">Year 10 Computer Science • CPU Mission HQ • Progress is stored on this browser only.</div>
+<script src="app.js"></script>
+</body></html>

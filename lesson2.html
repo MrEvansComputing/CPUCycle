@@ -1,0 +1,78 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CPU Control Room</title><link rel="stylesheet" href="styles.css"></head><body>
+<div class="topbar">
+  <div class="brand"><div class="chip">CPU</div> CPU MISSION HQ</div>
+  <div class="navlinks">
+    <a href="index.html">HQ</a><a href="lesson1.html">Boot Sequence</a><a href="lesson2.html">Control Room</a><a href="lesson3.html">Fetch Protocol</a><a href="arena.html">Challenge Arena</a>
+  </div>
+  <div class="stats"><div class="pill"><strong data-xp>0</strong> XP</div><div class="pill"><strong data-done>0</strong> missions</div></div>
+</div><main class="wrap">
+<div class="kicker">Lesson 2 extension</div><h1>CPU Control Room</h1>
+<p class="small">Components, registers, clock and buses. This page moves from recall to diagnosis.</p>
+
+<section class="mission"><h2>Mission 1 — Assign the job</h2>
+<div class="question"><strong>Which component performs arithmetic calculations and logical comparisons?</strong>
+<div class="options">
+<button class="option" data-value="cu" onclick="mcq(this,'alu','l2q1',20,'The ALU performs arithmetic and logical operations.')">Control Unit</button>
+<button class="option" data-value="alu" onclick="mcq(this,'alu','l2q1',20,'The ALU performs arithmetic and logical operations.')">ALU</button>
+<button class="option" data-value="clock" onclick="mcq(this,'alu','l2q1',20,'The ALU performs arithmetic and logical operations.')">Clock</button>
+</div><div class="feedback"></div></div>
+
+<div class="question"><strong>Which part coordinates the activities of the CPU and sends control signals?</strong>
+<div class="options">
+<button class="option" data-value="alu" onclick="mcq(this,'cu','l2q2',20,'The Control Unit coordinates CPU activity and issues control signals.')">ALU</button>
+<button class="option" data-value="cu" onclick="mcq(this,'cu','l2q2',20,'The Control Unit coordinates CPU activity and issues control signals.')">Control Unit</button>
+<button class="option" data-value="register" onclick="mcq(this,'cu','l2q2',20,'The Control Unit coordinates CPU activity and issues control signals.')">Register</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="mission"><h2>Mission 2 — Bus routing</h2>
+<div class="question"><strong>The CPU needs to tell RAM which memory location to access. Which bus is used?</strong>
+<div class="options">
+<button class="option" data-value="address" onclick="mcq(this,'address','l2q3',30,'The address bus carries the location/address.')">Address bus</button>
+<button class="option" data-value="data" onclick="mcq(this,'address','l2q3',30,'The address bus carries the location/address.')">Data bus</button>
+<button class="option" data-value="control" onclick="mcq(this,'address','l2q3',30,'The address bus carries the location/address.')">Control bus</button>
+</div><div class="feedback"></div></div>
+
+<div class="question"><strong>RAM sends an instruction back to the CPU. Which bus carries the instruction itself?</strong>
+<div class="options">
+<button class="option" data-value="address" onclick="mcq(this,'data','l2q4',30,'The data bus carries data and instructions.')">Address bus</button>
+<button class="option" data-value="data" onclick="mcq(this,'data','l2q4',30,'The data bus carries data and instructions.')">Data bus</button>
+<button class="option" data-value="control" onclick="mcq(this,'data','l2q4',30,'The data bus carries data and instructions.')">Control bus</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="mission"><h2>Mission 3 — CPU crime scene</h2>
+<p>A technician wrote this report. Find the first incorrect statement.</p>
+<div class="code">1. The ALU controls all activity in the CPU.
+2. The control unit coordinates operations.
+3. Registers are small, fast storage locations inside the CPU.
+4. The address bus carries memory locations.
+5. The data bus can carry instructions.</div>
+<div class="question"><strong>Which line should be corrected first?</strong>
+<div class="options">
+<button class="option" data-value="1" onclick="mcq(this,'1','l2crime1',40,'Line 1 is wrong: the Control Unit coordinates CPU activity; the ALU performs arithmetic and logic.')">Line 1</button>
+<button class="option" data-value="3" onclick="mcq(this,'1','l2crime1',40,'Line 1 is wrong: the Control Unit coordinates CPU activity; the ALU performs arithmetic and logic.')">Line 3</button>
+<button class="option" data-value="5" onclick="mcq(this,'1','l2crime1',40,'Line 1 is wrong: the Control Unit coordinates CPU activity; the ALU performs arithmetic and logic.')">Line 5</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="mission"><h2>Mission 4 — Failure diagnosis</h2>
+<div class="question"><strong>A fault means the CPU can still send addresses and receive data, but it cannot send a memory-read signal. Which bus is the likely problem?</strong>
+<div class="options">
+<button class="option" data-value="address" onclick="mcq(this,'control','l2fail',45,'The control bus carries control signals such as memory read/write.')">Address bus</button>
+<button class="option" data-value="data" onclick="mcq(this,'control','l2fail',45,'The control bus carries control signals such as memory read/write.')">Data bus</button>
+<button class="option" data-value="control" onclick="mcq(this,'control','l2fail',45,'The control bus carries control signals such as memory read/write.')">Control bus</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="mission"><h2>Mission 5 — Build the explanation</h2>
+<div class="question"><strong>Why are registers useful even though the computer already has RAM?</strong>
+<div class="inputline"><input type="text" placeholder="Write one precise sentence"><button class="btn good" onclick="shortCheck(this,['fast','quick','cpu','temporary'],'l2short',55,'Mention that registers are very fast temporary storage inside the CPU.')">Submit</button></div>
+<div class="feedback"></div></div>
+<div class="callout">Expert task: explain why increasing clock speed can improve performance, but does not guarantee that every computer with a higher clock speed is always faster.</div>
+</section>
+</main>
+<div class="footer">Year 10 Computer Science • CPU Mission HQ • Progress is stored on this browser only.</div>
+<script src="app.js"></script>
+</body></html>

@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fetch Protocol</title><link rel="stylesheet" href="styles.css"></head><body>
+<div class="topbar">
+  <div class="brand"><div class="chip">CPU</div> CPU MISSION HQ</div>
+  <div class="navlinks">
+    <a href="index.html">HQ</a><a href="lesson1.html">Boot Sequence</a><a href="lesson2.html">Control Room</a><a href="lesson3.html">Fetch Protocol</a><a href="arena.html">Challenge Arena</a>
+  </div>
+  <div class="stats"><div class="pill"><strong data-xp>0</strong> XP</div><div class="pill"><strong data-done>0</strong> missions</div></div>
+</div><main class="wrap">
+<div class="kicker">Lesson 3 extension</div><h1>Fetch Protocol</h1>
+<p class="small">Fetch only. No named-register overload. Focus on what travels, where it travels and why.</p>
+
+<section class="mission"><h2>Mission 1 — Address or instruction?</h2>
+<div class="question"><strong>The CPU needs the instruction stored at memory location 40. What travels first from the CPU toward RAM?</strong>
+<div class="options">
+<button class="option" data-value="instruction" onclick="mcq(this,'address','l3q1',25,'The CPU first sends the address/location it wants to access.')">The instruction itself</button>
+<button class="option" data-value="address" onclick="mcq(this,'address','l3q1',25,'The CPU first sends the address/location it wants to access.')">The address 40</button>
+<button class="option" data-value="result" onclick="mcq(this,'address','l3q1',25,'The CPU first sends the address/location it wants to access.')">The final calculation result</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="mission"><h2>Mission 2 — Fetch relay</h2>
+<p>Put the simplified fetch sequence in order.</p>
+<div class="sort-zone">
+<div class="row"><div class="token" data-key="return">RAM sends the instruction back on the data bus</div><button class="iconbtn" onclick="moveItem(this,-1)">↑</button><button class="iconbtn" onclick="moveItem(this,1)">↓</button></div>
+<div class="row"><div class="token" data-key="address">CPU sends the required memory address on the address bus</div><button class="iconbtn" onclick="moveItem(this,-1)">↑</button><button class="iconbtn" onclick="moveItem(this,1)">↓</button></div>
+<div class="row"><div class="token" data-key="read">Control Unit sends a memory-read signal on the control bus</div><button class="iconbtn" onclick="moveItem(this,-1)">↑</button><button class="iconbtn" onclick="moveItem(this,1)">↓</button></div>
+</div>
+<button class="btn" onclick="checkOrder(this,['address','read','return'],'l3order',45)">Check sequence</button><div class="feedback"></div>
+</section>
+
+<section class="mission"><h2>Mission 3 — Debug the explanation</h2>
+<div class="code">“During fetch, the CPU sends the instruction number along the data bus to RAM. RAM then sends the memory address back on the address bus.”</div>
+<div class="question"><strong>What is the main correction?</strong>
+<div class="options">
+<button class="option" data-value="swap" onclick="mcq(this,'swap','l3debug',45,'The address goes CPU → RAM on the address bus; the instruction returns RAM → CPU on the data bus.')">The roles/directions of the address bus and data bus are reversed.</button>
+<button class="option" data-value="alu" onclick="mcq(this,'swap','l3debug',45,'The address goes CPU → RAM on the address bus; the instruction returns RAM → CPU on the data bus.')">The ALU should send both values.</button>
+<button class="option" data-value="ssd" onclick="mcq(this,'swap','l3debug',45,'The address goes CPU → RAM on the address bus; the instruction returns RAM → CPU on the data bus.')">The SSD should replace RAM during fetch.</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="mission"><h2>Mission 4 — System failure simulator</h2>
+<div class="question"><strong>The address bus fails. What is the best consequence?</strong>
+<div class="options">
+<button class="option" data-value="no-location" onclick="mcq(this,'no-location','l3fail1',50,'Without the address bus, the CPU cannot specify which memory location RAM should access.')">The CPU cannot tell RAM which location to access.</button>
+<button class="option" data-value="no-calc" onclick="mcq(this,'no-location','l3fail1',50,'Without the address bus, the CPU cannot specify which memory location RAM should access.')">The ALU permanently loses the ability to add numbers.</button>
+<button class="option" data-value="storage" onclick="mcq(this,'no-location','l3fail1',50,'Without the address bus, the CPU cannot specify which memory location RAM should access.')">The SSD becomes volatile.</button>
+</div><div class="feedback"></div></div>
+
+<div class="question"><strong>The data bus fails during fetch. What is the most direct problem?</strong>
+<div class="options">
+<button class="option" data-value="noinstruction" onclick="mcq(this,'noinstruction','l3fail2',50,'RAM may know the address, but the instruction cannot be transferred back to the CPU.')">The fetched instruction cannot be transferred back to the CPU.</button>
+<button class="option" data-value="clock" onclick="mcq(this,'noinstruction','l3fail2',50,'RAM may know the address, but the instruction cannot be transferred back to the CPU.')">The CPU clock stops generating pulses.</button>
+<button class="option" data-value="capacity" onclick="mcq(this,'noinstruction','l3fail2',50,'RAM may know the address, but the instruction cannot be transferred back to the CPU.')">RAM capacity doubles.</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="mission"><h2>Mission 5 — 20-second explanation</h2>
+<p>Imagine you are explaining fetch to someone who has never studied it. Type a concise explanation using <strong>address bus, control bus, data bus, RAM</strong>.</p>
+<div class="question">
+<div class="inputline"><input type="text" placeholder="Your explanation"><button class="btn good" onclick="shortCheck(this,['address bus','data bus','ram'],'l3short',65,'Try to include RAM, the address bus and the data bus.')">Submit</button></div><div class="feedback"></div></div>
+<div class="callout">Boss prompt: Why is “address ≠ instruction” such an important distinction when explaining fetch?</div>
+</section>
+</main>
+<div class="footer">Year 10 Computer Science • CPU Mission HQ • Progress is stored on this browser only.</div>
+<script src="app.js"></script>
+</body></html>

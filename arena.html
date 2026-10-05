@@ -1,0 +1,50 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Challenge Arena</title><link rel="stylesheet" href="styles.css"></head><body>
+<div class="topbar">
+  <div class="brand"><div class="chip">CPU</div> CPU MISSION HQ</div>
+  <div class="navlinks">
+    <a href="index.html">HQ</a><a href="lesson1.html">Boot Sequence</a><a href="lesson2.html">Control Room</a><a href="lesson3.html">Fetch Protocol</a><a href="arena.html">Challenge Arena</a>
+  </div>
+  <div class="stats"><div class="pill"><strong data-xp>0</strong> XP</div><div class="pill"><strong data-done>0</strong> missions</div></div>
+</div><main class="wrap">
+<div class="kicker">Fast finisher zone</div><h1>Challenge Arena</h1>
+<p class="small">These are deliberately less scaffolded. Think before clicking.</p>
+
+<section class="mission"><h2>Boss 1 — The misleading advert</h2>
+<div class="question"><strong>An advert claims: “This laptop opens every program instantly because its CPU has 16 cores.” Which evaluation is best?</strong>
+<div class="options">
+<button class="option" data-value="a" onclick="mcq(this,'c','arena1',70,'Opening programs can also depend on secondary storage speed, RAM and the software workload. More cores alone do not guarantee instant loading.')">True — core count alone controls loading time.</button>
+<button class="option" data-value="b" onclick="mcq(this,'c','arena1',70,'Opening programs can also depend on secondary storage speed, RAM and the software workload. More cores alone do not guarantee instant loading.')">False — CPU cores never affect performance.</button>
+<button class="option" data-value="c" onclick="mcq(this,'c','arena1',70,'Opening programs can also depend on secondary storage speed, RAM and the software workload. More cores alone do not guarantee instant loading.')">Misleading — performance depends on several components and the task being performed.</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="mission"><h2>Boss 2 — Chain reaction</h2>
+<div class="question"><strong>A computer can send a correct address and a memory-read signal, but the CPU receives nothing back from RAM. Which component/path is the strongest suspect?</strong>
+<div class="options">
+<button class="option" data-value="data" onclick="mcq(this,'data','arena2',75,'The address and control stages work, so the return path carrying the instruction/data is the strongest suspect.')">Data bus</button>
+<button class="option" data-value="address" onclick="mcq(this,'data','arena2',75,'The address and control stages work, so the return path carrying the instruction/data is the strongest suspect.')">Address bus</button>
+<button class="option" data-value="clock" onclick="mcq(this,'data','arena2',75,'The address and control stages work, so the return path carrying the instruction/data is the strongest suspect.')">Clock only</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="mission"><h2>Boss 3 — Explain the bottleneck</h2>
+<div class="question"><strong>A student upgrades from an HDD to an SSD. Games load faster, but once a complex simulation is running, calculations are still slow. Which explanation is strongest?</strong>
+<div class="options">
+<button class="option" data-value="a" onclick="mcq(this,'b','arena3',80,'The SSD improves storage access/loading. Once running, CPU performance and available RAM may matter more for processing-heavy work.')">The SSD controls all CPU calculations, so the upgrade failed.</button>
+<button class="option" data-value="b" onclick="mcq(this,'b','arena3',80,'The SSD improves storage access/loading. Once running, CPU performance and available RAM may matter more for processing-heavy work.')">The SSD improves loading, but CPU/RAM can still be bottlenecks during processing.</button>
+<button class="option" data-value="c" onclick="mcq(this,'b','arena3',80,'The SSD improves storage access/loading. Once running, CPU performance and available RAM may matter more for processing-heavy work.')">The program must be running directly from the SSD.</button>
+</div><div class="feedback"></div></div>
+</section>
+
+<section class="mission"><h2>Final challenge — Teach it better</h2>
+<p>Imagine a Year 8 student says:</p>
+<div class="callout">“The address bus carries the instruction because the instruction has an address.”</div>
+<div class="question"><strong>Write a two-sentence correction that clearly separates <em>where to look</em> from <em>what to do</em>.</strong>
+<div class="inputline"><input type="text" placeholder="Your two-sentence explanation"><button class="btn good" onclick="shortCheck(this,['where','instruction','address'],'arena4',100,'Use the idea that the address says WHERE to look, while the instruction says WHAT to do.')">Submit</button></div>
+<div class="feedback"></div></div>
+</section>
+</main>
+<div class="footer">Year 10 Computer Science • CPU Mission HQ • Progress is stored on this browser only.</div>
+<script src="app.js"></script>
+</body></html>
